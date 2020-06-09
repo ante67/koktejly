@@ -1,0 +1,59 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 9. 6. 2020, 19:48:49
+    Author     : m.ambros
+*/
+@charset "UTF-8"
+
+
+#search{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: transparent;
+    display: block;
+    height: calc(1.5em+.75rem+2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #000000;
+    border: 3px solid #000000;
+    font-weight: bold;
+    border-radius: 5px;
+    font-family: "Comic Sans MS",cursive,sans-serif;    
+}
+.button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: transparent;
+    display: block;
+    height: calc(1.5em+.75rem+2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-family: "Comic Sans MS",cursive,sans-serif;    
+}
+.ingredient-item{
+    margin: 1px;
+    display: inline-block;
+    white-space: nowrap;
+    width: 160px;
+    height: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: default;
+    border-radius: 5px;
+    color: #000000;
+    font-weight: bold;            
+    font-family: "Comic Sans MS",cursive,sans-serif;    
+}
