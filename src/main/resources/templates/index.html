@@ -19,7 +19,7 @@ and open the template in the editor.
             <div class="row h-50">
                 <div class="row col-1">&nbsp;</div>
                 <div class="row col-10">
-                    <form>
+                    <form action="#" th:action="@{/result}" th:object="${ingredientsFormModel}" method="post">
                         <div class="form-group">
                             <input class="form-control" id="search" placeholder="Filter">
                             <div class="input-group-append">
@@ -28,7 +28,7 @@ and open the template in the editor.
                             <div class="form-check form-check-inline">
                                 <ul class="list-inline" style="list-style-type: none">
                                     <li class="ingredient-item" th:id="${ingredient.ingredientId}" th:each="ingredient : ${ingredients}">
-                                        <input type="checkbox" th:value="${ingredient.ingredientId}" style="display: none;">
+                                        <input type="checkbox" th:value="${ingredient.ingredientId}" th:field="*{ingredientIds}" style="display: none;">
                                         <span th:text="${ingredient.name}"></span>                
                                     </li>
                                 </ul>
@@ -44,8 +44,29 @@ and open the template in the editor.
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>   
-        
-                
+        <script>
+            $("#search").keyup(function(){
+                var serachText = $("#search").val();
+                $(".ingredient-item").each(function(i) { //iterátor všech ingrediencí
+                    var ingredientName = $(this).text();
+                }
+                    if (!(searchText.trim()=='')){
+                        if (ingredientName.includes(searchText)) {
+                            $(this).css("display","inline-block");
+                        }else{
+                            var prop = $(this).find("input").prop("checked");
+                            if (prop == false){
+                                $(this).css("display","none");
+                            }
+                        }
+                    }else{
+                        $(this).css("display","inline-block");
+                    }
+                        
+                });
+            });
+            
+         </script>       
     </body>
 
 </html>
