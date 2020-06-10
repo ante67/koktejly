@@ -33,15 +33,5 @@ public class CocktailXIngredientServiceImpl implements ICocktailXIngredientServi
             .filter(record -> ingredientIds.contains(record.getIngredient().getIngredientId()))
             .distinct()
             .collect(Collectors.toList());
-                    
-                    
-                    
-                    //getIngredient().getIngredientID()))
-               // .distinct().collect(Collectors.toList());
-        
-        //cocktailXIngredientData.
-        //return null;
     }
-    
-    
 }

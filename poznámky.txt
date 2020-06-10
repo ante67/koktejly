@@ -1,0 +1,33 @@
+- hosting s podporou java, postgress, apache tomcat
+
+Finální distribuce
+
+pom.xml
+<version>1.0.0</version>
+<packaging>war</packaging>
+
+.......
+<build>
+  <finalName>ROOT</finalName>
+</build>
+
+SLOŽENÍ WAR
+powershell, přepnout do adresáře projektu
+mvn clean package -Dskiptests
+vytvoří v /target soubor ROOT.war
+
+NOV8 VERZE
+- zvednout číslo verze
+- odkopírovat war 
+- znova mvn clean package -Dskiptests
+- nasadit
+
+TIPY
+- konfigurační application.dev.properties
+               application.prod.properties
+v applicatin properties              
+spring.profile.active =   // přepíná mezi konfigurákama.
+
+
+<maven.test.skip>true</maven.test.skip>  - v properties
+
